@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do_app/src/business_layer/localization/translations.dart';
 import 'package:to_do_app/src/business_layer/network/request_response_type.dart';
 import 'package:to_do_app/src/business_layer/providers/auth_provider.dart';
 import 'package:to_do_app/src/business_layer/util/helper/validator.dart';
@@ -59,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.only(bottom: 58.0),
           child: Center(
             child: Text(
-              "ToDo App",
+              AppLocalizations.current.getTitle,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   color: AppColors.whiteColor, fontStyle: FontStyle.italic),
             ),
@@ -87,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 20,
                         ),
                         Text(
-                          "Sign In",
+                          AppLocalizations.current.getSignIn,
                           style: Theme.of(context)
                               .textTheme
                               .displayLarge
@@ -128,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
         radius: 8,
         controller: _emailController,
         keyboardType: TextInputType.emailAddress,
-        hintText: "Email Address",
+        hintText: AppLocalizations.current.getEmailAddress,
         contentPadding: const EdgeInsets.symmetric(vertical: d_18),
         validator: (val) => Validator.checkLoginEmailErrorMessage(val!));
   }
@@ -142,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
         radius: 8,
         controller: _passwordController,
         keyboardType: TextInputType.text,
-        hintText: "Password",
+        hintText: AppLocalizations.current.getPassword,
         contentPadding: const EdgeInsets.symmetric(vertical: d_18),
         inputFormatters: [LengthLimitingTextInputFormatter(i_15)],
         validator: (val) => Validator.checkLoginPasswordErrorMessage(val!));
@@ -153,9 +154,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Don’t have an account?",
-          style: TextStyle(
+        Text(
+          AppLocalizations.current.dontHaveAccount,
+          style: const TextStyle(
               fontSize: d_13,
               color: neutral2color,
               fontWeight: FontWeight.w500,
@@ -169,9 +170,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => const SignUpScreen()));
           },
-          child: const Text(
-            "Sign up now!",
-            style: TextStyle(
+          child: Text(
+            AppLocalizations.current.signUpNow,
+            style: const TextStyle(
                 fontSize: d_13,
                 fontWeight: FontWeight.w500,
                 color: backgroundColor,
@@ -186,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
 // submit button
   _submitButton() {
     return CommonButton(
-      label: "SIGN IN",
+      label: AppLocalizations.current.getSignIn.toUpperCase(),
       onTap: _handleLoginTap,
       active: true,
     );

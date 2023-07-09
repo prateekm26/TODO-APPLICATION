@@ -1,7 +1,7 @@
 class EnglishText {
   static const Map<String, String> localizationValues = {
     /// App Title
-    "title": "Virtual Tour System",
+    "title": "ToDo App",
 
     /// Exception handling
     "empty_string": "",
@@ -28,13 +28,15 @@ class EnglishText {
     /// Login
     "or": "Or",
     "welcome": "Welcome",
-
     "login_with_email": "Login with Email",
+    "don'tHaveAccount": "Don’t have an account?",
+    "signUpNow": "Sign up now!",
 
     /// Email Login
 
     "login": "Login",
-    "email": "Email",
+    "signIn": "Sign In",
+    "emailAddress": "Email Address",
     "password": "Password",
     "enter_email_address": "Enter Email Address",
     "enter_password": "Enter Password",

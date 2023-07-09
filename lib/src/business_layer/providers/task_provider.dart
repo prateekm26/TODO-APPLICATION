@@ -30,9 +30,9 @@ class TaskProvider extends BaseProvider {
     required Tasks newTask,
   }) async {
     String res;
-    res = await addTask(task: newTask);
+    res = await deleteTask(oldTask);
     if (res == ResponseTypes.success) {
-      res = await deleteTask(oldTask);
+      res = await addTask(task: newTask);
     }
     return res;
   }

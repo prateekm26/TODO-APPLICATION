@@ -60,7 +60,8 @@ class AppLocalizations {
       _localizedValues[locale.languageCode]?['parse_exception'] ?? "";
 
   String get getLogin => _localizedValues[locale.languageCode]?['login'] ?? "";
-
+  String get getSignIn =>
+      _localizedValues[locale.languageCode]?['signIn'] ?? "";
   String get getSessionExpired =>
       _localizedValues[locale.languageCode]?["session_expired"] ?? "";
 
@@ -75,8 +76,12 @@ class AppLocalizations {
   String get getLoginInfo =>
       _localizedValues[locale.languageCode]?["login_info"] ?? "";
 
-  String get getEmail => _localizedValues[locale.languageCode]?["email"] ?? "";
-
+  String get getEmailAddress =>
+      _localizedValues[locale.languageCode]?["emailAddress"] ?? "";
+  String get dontHaveAccount =>
+      _localizedValues[locale.languageCode]?["don'tHaveAccount"] ?? "";
+  String get signUpNow =>
+      _localizedValues[locale.languageCode]?["signUpNow"] ?? "";
   String get getEmailIsReq =>
       _localizedValues[locale.languageCode]?["email_is_required"] ?? "";
   String get getCnfPwdReq =>
@@ -312,11 +317,6 @@ class AppLocalizations {
   String get noInternetConnection =>
       _localizedValues[locale.languageCode]?["no_internet_connection"] ?? "";
 
-  String get virtualTour =>
-      _localizedValues[locale.languageCode]?["virtual_tour"] ?? "";
-
-  String get virtualTourDesc =>
-      _localizedValues[locale.languageCode]?["virtual_tour_desc"] ?? "";
   String? get cnfPwdMustBeSame =>
       _localizedValues[locale.languageCode]?["cnf_pwd_must_same"] ?? "";
 }
