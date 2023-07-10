@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/src/business_layer/localization/translations.dart';
 import 'package:to_do_app/src/data_layer/res/app_colors.dart';
 
 class SplashScreenMainWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class SplashScreenMainWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "ToDo App",
+                  AppLocalizations.current.getTitle,
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       color: AppColors.whiteColor, fontStyle: FontStyle.italic),
                 )

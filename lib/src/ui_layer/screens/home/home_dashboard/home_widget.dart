@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do_app/src/business_layer/localization/translations.dart';
 import 'package:to_do_app/src/business_layer/network/request_response_type.dart';
 import 'package:to_do_app/src/business_layer/providers/task_provider.dart';
 import 'package:to_do_app/src/business_layer/util/helper/date_time_helper.dart';
@@ -41,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: _bodyWidget(),
       floatingActionButton: FloatingActionButton(
-        tooltip: "Add New",
         isExtended: true,
         child: const Icon(Icons.add, color: AppColors.whiteColor),
         onPressed: () async {
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (_taskProvider!.taskModel.todayTasks!.isNotEmpty)
-                            _title("Today"),
+                            _title(AppLocalizations.current.today),
                           ListView(
                               physics: const NeverScrollableScrollPhysics(),
                               padding: EdgeInsets.zero,
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       .taskModel.todayTasks![index]))),
                           if (_taskProvider!
                               .taskModel.upcommingTasks!.isNotEmpty)
-                            _title("Upcoming"),
+                            _title(AppLocalizations.current.upcoming),
                           ListView(
                               physics: const NeverScrollableScrollPhysics(),
                               padding: EdgeInsets.zero,
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   (index) => _toDoCardWidget(_taskProvider!
                                       .taskModel.upcommingTasks![index]))),
                           if (_taskProvider!.taskModel.pastTask!.isNotEmpty)
-                            _title("Past"),
+                            _title(AppLocalizations.current.past),
                           ListView(
                               physics: const NeverScrollableScrollPhysics(),
                               padding: EdgeInsets.zero,
@@ -248,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         task: task,
                                       ))).then((value) => _fetchTasks());
                         },
-                        label: "Edit",
+                        label: AppLocalizations.current.edit,
                       ),
                     const SizedBox(
                       width: 10,
@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           builder: (context) => ViewTaskScreen(
                                 task: task,
                               ))),
-                  label: "View",
+                  label: AppLocalizations.current.view,
                 ),
               ),
             )
@@ -323,12 +323,12 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: AppImages.bigWarningIcon,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: Text(
-                "No tasks are available, Create one now",
+                AppLocalizations.current.noTaskAvailable,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: d_12,
                   fontWeight: FontWeight.w500,
                   color: hintTextColor,
@@ -346,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           MaterialPageRoute(builder: (context) => AddTask()))
                       .then((value) => _fetchTasks());
                 },
-                label: "Add Task",
+                label: AppLocalizations.current.addTask,
               ),
             )
           ],

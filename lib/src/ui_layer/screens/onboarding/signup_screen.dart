@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do_app/src/business_layer/localization/translations.dart';
 import 'package:to_do_app/src/business_layer/network/request_response_type.dart';
 import 'package:to_do_app/src/business_layer/providers/auth_provider.dart';
 import 'package:to_do_app/src/business_layer/util/helper/validator.dart';
@@ -74,7 +75,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           padding: const EdgeInsets.only(bottom: 58.0),
           child: Center(
             child: Text(
-              "ToDo App",
+              AppLocalizations.current.getTitle,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   color: AppColors.whiteColor, fontStyle: FontStyle.italic),
             ),
@@ -102,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 20,
                         ),
                         Text(
-                          "Sign Up",
+                          AppLocalizations.current.signUp,
                           style: Theme.of(context)
                               .textTheme
                               .displayLarge
@@ -145,7 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         radius: 8,
         controller: _emailController,
         keyboardType: TextInputType.emailAddress,
-        hintText: "Email Address",
+        hintText: AppLocalizations.current.getEmailAddress,
         contentPadding: const EdgeInsets.symmetric(vertical: d_18),
         validator: (val) => Validator.checkLoginEmailErrorMessage(val!));
   }
@@ -160,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         controller: _passwordController,
         keyboardType: TextInputType.text,
         //obscureText: true,
-        hintText: "Password",
+        hintText: AppLocalizations.current.getPassword,
         contentPadding: const EdgeInsets.symmetric(vertical: d_18),
         inputFormatters: [LengthLimitingTextInputFormatter(i_15)],
         validator: (val) => Validator.checkLoginPasswordErrorMessage(val!));
@@ -176,7 +177,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         controller: _cnfPwdController,
         keyboardType: TextInputType.text,
         //obscureText: true,
-        hintText: "Confirm Password",
+        hintText: AppLocalizations.current.getConfirmPass,
         contentPadding: const EdgeInsets.symmetric(vertical: d_18),
         inputFormatters: [LengthLimitingTextInputFormatter(i_15)],
         validator: (val) => Validator.checkCnfPasswordErrorMessage(
@@ -188,9 +189,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Already have an account?",
-          style: TextStyle(
+        Text(
+          AppLocalizations.current.alreadyHaveAc,
+          style: const TextStyle(
               fontSize: d_13,
               color: neutral2color,
               fontWeight: FontWeight.w500,
@@ -204,9 +205,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => const LoginScreen()));
           },
-          child: const Text(
-            "Sign in now!",
-            style: TextStyle(
+          child: Text(
+            AppLocalizations.current.signInNow,
+            style: const TextStyle(
                 fontSize: d_13,
                 fontWeight: FontWeight.w500,
                 color: backgroundColor,
@@ -237,7 +238,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       _authProvider.loading = false;
 
       if (res == ResponseTypes.success) {
-        MessageHelper.showSnackBar(context, "Onboarded successfully");
+        MessageHelper.showSnackBar(
+            context, AppLocalizations.current.onBoardingSuccess);
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const HomeScreen()));
       } else {

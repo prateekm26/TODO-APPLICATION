@@ -80,8 +80,25 @@ class AppLocalizations {
       _localizedValues[locale.languageCode]?["emailAddress"] ?? "";
   String get dontHaveAccount =>
       _localizedValues[locale.languageCode]?["don'tHaveAccount"] ?? "";
+  String get alreadyHaveAc =>
+      _localizedValues[locale.languageCode]?["alreadyHaveAc"] ?? "";
+  String get signInNow =>
+      _localizedValues[locale.languageCode]?["signInNow"] ?? "";
+  String get onBoardingSuccess =>
+      _localizedValues[locale.languageCode]?["onBoardingSuccess"] ?? "";
   String get signUpNow =>
       _localizedValues[locale.languageCode]?["signUpNow"] ?? "";
+  String get signUp => _localizedValues[locale.languageCode]?["signUp"] ?? "";
+  String get today => _localizedValues[locale.languageCode]?["today"] ?? "";
+  String get upcoming =>
+      _localizedValues[locale.languageCode]?["upcoming"] ?? "";
+  String get past => _localizedValues[locale.languageCode]?["past"] ?? "";
+  String get edit => _localizedValues[locale.languageCode]?["edit"] ?? "";
+  String get view => _localizedValues[locale.languageCode]?["view"] ?? "";
+  String get addTask => _localizedValues[locale.languageCode]?["addTask"] ?? "";
+  String get noTaskAvailable =>
+      _localizedValues[locale.languageCode]?["noTaskAvailable"] ?? "";
+
   String get getEmailIsReq =>
       _localizedValues[locale.languageCode]?["email_is_required"] ?? "";
   String get getCnfPwdReq =>
@@ -101,7 +118,8 @@ class AppLocalizations {
 
   String get getPassword =>
       _localizedValues[locale.languageCode]?["password"] ?? "";
-
+  String get getConfirmPass =>
+      _localizedValues[locale.languageCode]?["getConfirmPass"] ?? "";
   String get getFNameIsReq =>
       _localizedValues[locale.languageCode]?["first_name_req"] ?? "";
 

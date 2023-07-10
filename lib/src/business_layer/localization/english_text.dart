@@ -30,7 +30,11 @@ class EnglishText {
     "welcome": "Welcome",
     "login_with_email": "Login with Email",
     "don'tHaveAccount": "Don’t have an account?",
+    "alreadyHaveAc": "Already have an account?",
     "signUpNow": "Sign up now!",
+    "signInNow": "Sign in now!",
+    "signUp": "Sign Up",
+    "onBoardingSuccess": "Onboarded Successfully",
 
     /// Email Login
 
@@ -38,6 +42,7 @@ class EnglishText {
     "signIn": "Sign In",
     "emailAddress": "Email Address",
     "password": "Password",
+    "getConfirmPass": "Confirm Password",
     "enter_email_address": "Enter Email Address",
     "enter_password": "Enter Password",
     "email_is_required": "Email is required",
@@ -51,6 +56,15 @@ class EnglishText {
     "login_successfully": "Login successfully",
     "forgot_password": "Forgot Password",
     "question_mark": "?",
+
+    ///Home
+    "today": "Today",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "edit": "Edit",
+    "view": "View",
+    "addTask": "AddTask",
+    "noTaskAvailable": "No tasks are available, Create one now",
 
     /// Logout
     "want_to_logout": "Are you sure, you want to logout?",
